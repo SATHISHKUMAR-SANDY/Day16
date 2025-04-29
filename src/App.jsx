@@ -2,7 +2,7 @@ import Home from "./assets/Components/Home";
 import TodoApp from "./assets/Components/TodoApp";
 import Login from "./assets/Components/Login";
 import Products from "./assets/Components/Products";
-import SignUp from "./assets/components/SignUp";
+import SignUp from "./assets/Components/SignUp";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ProductDetails from "./assets/Components/ProductDetails";
 import ProductList from "./assets/Components/ProductList";
