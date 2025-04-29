@@ -1,11 +1,13 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { FaCartArrowDown } from "react-icons/fa";
 
 function NavBar() {
+   const Navigate  = useNavigate()
   return (
     <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
       <Container fluid>
@@ -33,6 +35,7 @@ function NavBar() {
               TodoApp
             </Nav.Link>
           </Nav>
+<FaCartArrowDown size={24} className="me-5" onClick={()=>Navigate("/wishlist")}  ></FaCartArrowDown>
           <Form className="d-flex">
             <Form.Control
               type="search"

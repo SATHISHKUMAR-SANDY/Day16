@@ -5,10 +5,19 @@ import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../CustomHooks/useFetch";
 import Swal from "sweetalert2";
+import {addItem}from "../store/cartSlice";
+import { useDispatch } from "react-redux";
+
 
 const ProductList = () => {
   let { product, err, loading, setProduct } = useFetch("http://localhost:8000/products");
   let navigate = useNavigate();
+
+
+const dispatch = useDispatch()
+const addcartItems = (Product)=>{
+dispatch(addItem(Product))
+}
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -60,7 +69,7 @@ const ProductList = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Button variant="primary">Add to Cart</Button>
+                  <Button variant="primary" onClick={()=>addcartItems(p)} >Add to Cart</Button>
                   <Button variant="secondary" onClick={() => navigate(`/update/${p.id}`)}>Edit</Button>
                   <Button variant="danger" onClick={() => handleDelete(p.id)}>Delete</Button>
                 </Card.Footer>

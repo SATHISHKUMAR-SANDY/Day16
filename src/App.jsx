@@ -13,6 +13,7 @@ import NavBar from "./assets/Components/NavBar";
 import NotFound from "./assets/Components/NotFound";
 import Newproduct from "./assets/Components/Newproduct";
 import { Update } from "./assets/Components/Update";
+import Wishlist from "./assets/Components/Wishlist";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="*" element={<NotFound></NotFound>} ></Route>
           <Route path="/newProduct" element={<Newproduct></Newproduct>} ></Route>
           <Route path="/update/:id" element={<Update></Update>} ></Route>
+          <Route path="wishlist"  element={<Wishlist></Wishlist>} ></Route>
         </Routes>
       </Router>
     </div>
